@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interior Design Enquiry</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+color:#fff;
+background:
+radial-gradient(circle at top left,#4b3820,transparent 40%),
+linear-gradient(135deg,#090909,#202020,#090909);
+padding:20px;
+}
+
+.container{
+max-width:750px;
+margin:auto;
+}
+
+header{
+text-align:center;
+padding:25px;
+}
+
+header h1{color:#e6c477}
+
+.card{
+background:#171717;
+border:1px solid #b99a55;
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 40px #000;
+}
+
+input,select,textarea{
+width:100%;
+padding:13px;
+margin:8px 0 18px;
+border-radius:7px;
+border:1px solid #555;
+background:#252525;
+color:white;
+}
+
+label{color:#e6c477;font-weight:bold}
+
+button{
+padding:13px 22px;
+border:0;
+border-radius:7px;
+background:#d8b56a;
+color:#111;
+font-weight:bold;
+cursor:pointer;
+margin:5px;
+}
+
+button:hover{background:#f5d995}
+
+.section{display:none}
+.section.active{display:block}
+
+.progress{
+height:6px;
+background:#444;
+margin-bottom:25px;
+border-radius:10px;
+}
+
+#bar{
+height:6px;
+width:25%;
+background:#d8b56a;
+border-radius:10px;
+}
+
+.services label{
+display:block;
+color:white;
+margin:10px 0;
+font-weight:normal;
+}
+
+.services input{width:auto}
+
+.footer{
+text-align:center;
+color:#aaa;
+margin-top:20px;
+font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1>INTERIOR DESIGN STUDIO</h1>
+<p>PREMIUM CUSTOMER ENQUIRY FORM</p>
+</header>
+
+<div class="card">
+
+<div class="progress"><div id="bar"></div></div>
+
+<form id="enquiryForm">
+
+<!-- SECTION 1 -->
+<div class="section active">
+
+<h2>01. Personal Details</h2>
+
+<label>Full Name *</label>
+<input name="name" required placeholder="Enter full name">
+
+<label>Customer Type</label>
+<select name="customerType">
+<option>Homeowner</option>
+<option>Builder / Contractor</option>
+<option>Business Owner</option>
+<option>Other</option>
+</select>
+
+<label>Mobile Number *</label>
+<input name="mobile" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10 digit mobile number">
+
+<label>Gmail / Email *</label>
+<input name="email" type="email" required placeholder="example@gmail.com">
+
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+
+<h2>02. Location Details</h2>
+
+<label>City *</label>
+<input name="city" required placeholder="Enter city">
+
+<label>State *</label>
+<select name="state" required>
+<option value="">Select State</option>
+<option>Madhya Pradesh</option>
+<option>Gujarat</option>
+<option>Bihar</option>
+<option>Maharashtra</option>
+<option>Rajasthan</option>
+<option>Uttar Pradesh</option>
+<option>Delhi</option>
+<option>Other</option>
+</select>
+
+<label>Project Address</label>
+<textarea name="address" placeholder="Area, landmark, full address"></textarea>
+
+<label>PIN Code</label>
+<input name="pin" maxlength="6" pattern="[0-9]{6}">
+
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+
+<h2>03. Interior Services</h2>
+
+<p>Select your interested services:</p>
+
+<div class="services">
+
+<label><input type="checkbox" name="services" value="POP Ceiling"> POP Ceiling</label>
+
+<label><input type="checkbox" name="services" value="Gypsum Ceiling"> Gypsum Ceiling</label>
+
+<label><input type="checkbox" name="services" value="PVC Ceiling"> PVC Ceiling</label>
+
+<label><input type="checkbox" name="services" value="Interior Design"> Interior Design</label>
+
+<label><input type="checkbox" name="services" value="2D Drawing"> 2D Drawing</label>
+
+<label><input type="checkbox" name="services" value="3D Drawing"> 3D Drawing</label>
+
+<label><input type="checkbox" name="services" value="Full Home Interior"> Full Home Interior</label>
+
+<label><input type="checkbox" name="services" value="Wall Decoration"> Wall Decoration</label>
+
+<label><input type="checkbox" name="services" value="Office Interior"> Office Interior</label>
+
+</div>
+
+<label>Property Type</label>
+<select name="property">
+<option>House</option>
+<option>Apartment</option>
+<option>Office</option>
+<option>Shop</option>
+<option>Hotel</option>
+<option>Other</option>
+</select>
+
+<label>Approximate Area</label>
+<input name="area" placeholder="Example: 1200 sq ft">
+
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+
+<h2>04. Project & Budget</h2>
+
+<label>Estimated Budget *</label>
+<select name="budget" required>
+<option value="">Select Budget</option>
+<option>Below ₹50,000</option>
+<option>₹50,000 – ₹1 Lakh</option>
+<option>₹1 – ₹3 Lakh</option>
+<option>₹3 – ₹5 Lakh</option>
+<option>₹5 – ₹10 Lakh</option>
+<option>₹10 Lakh or Above</option>
+<option>Need Guidance</option>
+</select>
+
+<label>Project Start</label>
+<select name="timeline">
+<option>As soon as possible</option>
+<option>Within 1 month</option>
+<option>Within 3 months</option>
+<option>Later / Planning</option>
+</select>
+
+<label>Project Details</label>
+<textarea name="details" placeholder="Tell us about your interior project"></textarea>
+
+<label>
+<input type="checkbox" required>
+I agree to be contacted about my enquiry.
+</label>
+
+</div>
+
+<div style="margin-top:20px">
+<button type="button" id="prev">← Previous</button>
+<button type="button" id="next">Next →</button>
+</div>
+
+</form>
+
+<div id="success" style="display:none;text-align:center">
+<h2 style="color:#e6c477">Thank You!</h2>
+<p>Your enquiry has been submitted.</p>
+</div>
+
+</div>
+
+<div class="footer">
+Interior Design | POP | Gypsum | PVC | 2D & 3D Design
+</div>
+
+</div>
+
+<script>
+
+const sections=document.querySelectorAll(".section");
+let current=0;
+
+const next=document.getElementById("next");
+const prev=document.getElementById("prev");
+const bar=document.getElementById("bar");
+
+function showSection(){
+
+sections.forEach((s,i)=>{
+s.classList.toggle("active",i===current);
+});
+
+bar.style.width=((current+1)/sections.length*100)+"%";
+
+prev.style.display=current===0?"none":"inline-block";
+
+next.textContent=current===sections.length-1?
+"Submit Enquiry":"Next →";
+
+}
+
+showSection();
+
+next.onclick=async()=>{
+
+if(current<sections.length-1){
+
+const fields=sections[current].querySelectorAll("input,select,textarea");
+
+for(const field of fields){
+
+if(field.type==="checkbox"&&!field.required)continue;
+
+if(!field.checkValidity()){
+field.reportValidity();
+return;
+}
+
+}
+
+if(current===2&&!document.querySelector('input[name="services"]:checked')){
+alert("Please select at least one service.");
+return;
+}
+
+current++;
+showSection();
+
+}else{
+
+const form=document.getElementById("enquiryForm");
+
+if(!form.checkValidity()){
+form.reportValidity();
+return;
+}
+
+const data=new FormData(form);
+
+const services=[...document.querySelectorAll('input[name="services"]:checked')]
+.map(x=>x.value).join(", ");
+
+data.set("services",services);
+
+const obj=Object.fromEntries(data.entries());
+
+next.disabled=true;
+next.textContent="Submitting...";
+
+try{
+
+await fetch("PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE",{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"text/plain;charset=utf-8"},
+body:JSON.stringify(obj)
+});
+
+form.style.display="none";
+document.getElementById("success").style.display="block";
+
+}catch(error){
+
+alert("Submission failed. Please try again.");
+next.disabled=false;
+next.textContent="Submit Enquiry";
+
+}
+
+}
+
+};
+
+prev.onclick=()=>{
+if(current>0){
+current--;
+showSection();
+}
+};
+
+</script>
+
+</body>
+</html>
